@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "pixelalbatross/date",
+  "title": "Date",
+  "category": "text",
+  "icon": "calendar",
+  "description": "Display a date.",
+  "keywords": [
+    "date",
+    "year",
+    "month",
+    "day"
+  ],
+  "version": "0.1.0",
+  "textdomain": "date-block",
+  "attributes": {
+    "date": {
+      "type": "string"
+    },
+    "dateFormat": {
+      "type": "string"
+    },
+    "textAlign": {
+      "type": "string"
+    }
+  },
+  "supports": {
+    "html": false,
+    "className": true,
+    "color": {
+      "gradients": true,
+      "link": true,
+      "__experimentalDefaultControls": {
+        "background": true,
+        "text": true
+      }
+    },
+    "spacing": {
+      "padding": true,
+      "margin": [
+        "top",
+        "bottom"
+      ],
+      "blockGap": true
+    },
+    "typography": {
+      "fontSize": true,
+      "lineHeight": true,
+      "__experimentalDefaultControls": {
+        "__experimentalFontFamily": true,
+        "__experimentalFontStyle": true,
+        "__experimentalFontWeight": true,
+        "__experimentalLetterSpacing": true,
+        "__experimentalTextDecoration": true,
+        "__experimentalTextTransform": true,
+        "fontSize": true
+      }
+    }
+  },
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}
