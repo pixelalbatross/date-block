@@ -13,19 +13,22 @@ import { useEntityProp } from '@wordpress/core-data';
 import {
 	useBlockProps,
 	__experimentalDateFormatPicker as DateFormatPicker,
-	__experimentalPublishDateTimePicker as PublishDateTimePicker,
 	AlignmentControl,
 	BlockControls,
 	InspectorControls,
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import { Dropdown, PanelBody, PanelRow, ToolbarGroup, ToolbarButton } from '@wordpress/components';
-import { useMemo, useState, useEffect } from '@wordpress/element';
+import { useMemo, useState } from '@wordpress/element';
 import { dateI18n, getSettings as getDateSettings } from '@wordpress/date';
 import { DOWN } from '@wordpress/keycodes';
 import { edit } from '@wordpress/icons';
 
-const TIMEZONELESS_FORMAT = "yyyy-MM-dd'T'HH:mm:ss";
+/**
+ * Internal dependencies
+ */
+import DateTimePicker from './DateTimePicker';
+import { TIMEZONELESS_FORMAT } from './constants';
 
 // eslint-disable-next-line jsdoc/require-param
 /**
@@ -61,17 +64,15 @@ export default function Edit(props) {
 		'time_format',
 	);
 
-	useEffect(() => {
-		if (!date) {
-			setAttributes({ date: format(new Date(), TIMEZONELESS_FORMAT) });
-		}
-	}, [date, setAttributes]);
-
 	return (
 		<>
 			<div {...blockProps}>
 				<time dateTime={dateI18n('c', date)} ref={setPopoverAnchor}>
-					{dateI18n(dateFormat || siteDateFormat, date, false)}
+					{dateI18n(
+						dateFormat || siteDateFormat,
+						date || format(new Date(), TIMEZONELESS_FORMAT),
+						false,
+					)}
 				</time>
 			</div>
 
@@ -82,38 +83,37 @@ export default function Edit(props) {
 						setAttributes({ textAlign: nextAlign });
 					}}
 				/>
-				{date && (
-					<ToolbarGroup>
-						<Dropdown
-							popoverProps={popoverProps}
-							renderContent={({ onClose }) => (
-								<PublishDateTimePicker
-									currentDate={date}
-									onChange={(nextDate) => setAttributes({ date: nextDate })}
-									is12Hour={is12HourFormat(siteTimeFormat)}
-									onClose={onClose}
+				<ToolbarGroup>
+					<Dropdown
+						popoverProps={popoverProps}
+						renderContent={({ onClose }) => (
+							<DateTimePicker
+								currentDate={date}
+								onChange={(nextDate) => setAttributes({ date: nextDate })}
+								is12Hour={is12HourFormat(siteTimeFormat)}
+								onClose={onClose}
+								__nextRemoveResetButton={false}
+							/>
+						)}
+						renderToggle={({ isOpen, onToggle }) => {
+							const openOnArrowDown = (event) => {
+								if (!isOpen && event.keyCode === DOWN) {
+									event.preventDefault();
+									onToggle();
+								}
+							};
+							return (
+								<ToolbarButton
+									aria-expanded={isOpen}
+									icon={edit}
+									title={__('Change Date', 'date-block')}
+									onClick={onToggle}
+									onKeyDown={openOnArrowDown}
 								/>
-							)}
-							renderToggle={({ isOpen, onToggle }) => {
-								const openOnArrowDown = (event) => {
-									if (!isOpen && event.keyCode === DOWN) {
-										event.preventDefault();
-										onToggle();
-									}
-								};
-								return (
-									<ToolbarButton
-										aria-expanded={isOpen}
-										icon={edit}
-										title={__('Change Date', 'date-block')}
-										onClick={onToggle}
-										onKeyDown={openOnArrowDown}
-									/>
-								);
-							}}
-						/>
-					</ToolbarGroup>
-				)}
+							);
+						}}
+					/>
+				</ToolbarGroup>
 			</BlockControls>
 
 			<InspectorControls>
