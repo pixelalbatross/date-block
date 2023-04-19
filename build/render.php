@@ -9,15 +9,11 @@
  * @package pixelalbatross/date-block
  */
 
-if ( empty( $attributes['date'] ) ) {
-	return;
-}
+$date        = $attributes['date'] ?? false;
+$date_format = $attributes['dateFormat'] ?? get_option( 'date_format' );
 
-$date        = strtotime( $attributes['date'] );
-$date_format = $attributes['dateFormat'] ?? '';
-
-if ( empty( $date_format ) ) {
-	$date_format = get_option( 'date_format' );
+if ( ! empty( $date ) ) {
+	$date = strtotime( $attributes['date'] );
 }
 
 ?>
