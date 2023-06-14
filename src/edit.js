@@ -117,7 +117,7 @@ export default function Edit(props) {
 			</BlockControls>
 
 			<InspectorControls>
-				<PanelBody title={__('Date Settings', 'date-block')}>
+				<PanelBody title={__('Settings', 'date-block')}>
 					<PanelRow>
 						<DateFormatPicker
 							format={dateFormat}
