@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased]
 
+### Added
+
+- CODEOWNERS file
+
 ### Changed
 
 - Settings panel label.
