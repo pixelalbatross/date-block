@@ -25,6 +25,16 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function pixelalbatross_date_block_init() {
-	register_block_type( __DIR__ . '/build' );
+	$block_type = register_block_type( __DIR__ . '/build' );
+
+	if ( ! empty( $block_type->editor_script_handles ) ) {
+		foreach ( $block_type->editor_script_handles as $handle ) {
+			wp_set_script_translations(
+				$handle,
+				'date-block',
+				plugin_dir_path( __FILE__ ) . 'languages'
+			);
+		}
+	}
 }
 add_action( 'init', 'pixelalbatross_date_block_init' );
