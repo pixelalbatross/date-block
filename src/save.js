@@ -7,6 +7,6 @@
  *
  * @return {WPElement} Element to render.
  */
-export default function Save() {
+export default function DateSave() {
 	return null;
 }

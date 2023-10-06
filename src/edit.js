@@ -39,7 +39,7 @@ import { TIMEZONELESS_FORMAT } from './constants';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit(props) {
+export default function DateEdit(props) {
 	const { attributes, setAttributes } = props;
 	const { date, dateFormat, textAlign } = attributes;
 
