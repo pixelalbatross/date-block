@@ -38,8 +38,7 @@
       "margin": [
         "top",
         "bottom"
-      ],
-      "blockGap": true
+      ]
     },
     "typography": {
       "fontSize": true,

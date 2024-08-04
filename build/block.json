@@ -31,7 +31,6 @@
       "background": true,
       "gradients": true,
       "heading": true,
-      "link": true,
       "text": true
     },
     "spacing": {
@@ -39,8 +38,7 @@
       "margin": [
         "top",
         "bottom"
-      ],
-      "blockGap": true
+      ]
     },
     "typography": {
       "fontSize": true,
