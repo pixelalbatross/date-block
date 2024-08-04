@@ -4,7 +4,7 @@
  * Description:       Display a date.
  * Plugin URI:        https://pixelalbatross.pt/?utm_source=wp-plugins&utm_medium=date-block&utm_campaign=plugin-uri
  * Requires at least: 6.1
- * Requires PHP:      8.2
+ * Requires PHP:      7.4
  * Version:           0.6.0
  * Author:            Pixel Albatross
  * Author URI:        https://pixelalbatross.pt/?utm_source=wp-plugins&utm_medium=date-block&utm_campaign=author-uri
