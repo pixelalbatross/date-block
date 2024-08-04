@@ -14,22 +14,27 @@ msgstr ""
 "X-Domain: date-block\n"
 
 #. Plugin Name of the plugin
+#: date-block.php
 msgid "Date Block"
 msgstr "Bloco de Data"
 
 #. Plugin URI of the plugin
+#: date-block.php
 msgid "https://pixelalbatross.pt/?utm_source=wp-plugins&utm_medium=date-block&utm_campaign=plugin-uri"
 msgstr ""
 
 #. Description of the plugin
+#: date-block.php
 msgid "Display a date."
 msgstr "Exibe uma data."
 
 #. Author of the plugin
+#: date-block.php
 msgid "Pixel Albatross"
 msgstr ""
 
 #. Author URI of the plugin
+#: date-block.php
 msgid "https://pixelalbatross.pt/?utm_source=wp-plugins&utm_medium=date-block&utm_campaign=author-uri"
 msgstr ""
 
