@@ -1,7 +1,7 @@
 {
   "name": "pixelalbatross/date-block",
   "type": "wordpress-plugin",
-  "license": "GPL-2.0-or-later",
+  "license": "GPL-3.0-or-later",
   "authors": [
     {
       "name": "Pixel Albatross",
@@ -15,7 +15,8 @@
   "autoload": {},
   "require": {
     "php": "^7.4|^8.0",
-    "composer-plugin-api": "^2.3"
+    "composer-plugin-api": "^2.3",
+    "yahnis-elsts/plugin-update-checker": "^5.5"
   },
   "require-dev": {
     "phpcompatibility/php-compatibility": "dev-develop as 9.99.99",
