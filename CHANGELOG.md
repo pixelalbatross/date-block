@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file, per [the Keep a Changelog standard](http://keepachangelog.com/).
 
+## [0.7.2] - 2025-10-16
+
+### Changed
+
+- Update dependencies.
+
 ## [0.7.1] - 2024-12-07
 
 ### Changed

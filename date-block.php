@@ -3,9 +3,9 @@
  * Plugin Name:       Date Block
  * Description:       Display a date.
  * Plugin URI:        https://pixelalbatross.pt/?utm_source=wp-plugins&utm_medium=date-block&utm_campaign=plugin-uri
- * Requires at least: 6.1
+ * Requires at least: 6.7
  * Requires PHP:      7.4
- * Version:           0.7.1
+ * Version:           0.7.2
  * Author:            Pixel Albatross
  * Author URI:        https://pixelalbatross.pt/?utm_source=wp-plugins&utm_medium=date-block&utm_campaign=author-uri
  * License:           GPL-3.0-or-later
@@ -17,7 +17,7 @@
  * @package           pixelalbatross/date-block
  */
 
-namespace PixelAlbatross\WP\DateBlock;
+namespace PixelAlbatross\WP\Blocks\Date;
 
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
@@ -26,10 +26,10 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'PIXALB_DATE_BLOCK_PATH', plugin_dir_path( __FILE__ ) );
+define( 'PIXELALBATROSS_DATE_BLOCK_PATH', plugin_dir_path( __FILE__ ) );
 
-if ( file_exists( PIXALB_DATE_BLOCK_PATH . 'vendor/autoload.php' ) ) {
-	require_once PIXALB_DATE_BLOCK_PATH . 'vendor/autoload.php';
+if ( file_exists( PIXELALBATROSS_DATE_BLOCK_PATH . 'vendor/autoload.php' ) ) {
+	require_once PIXELALBATROSS_DATE_BLOCK_PATH . 'vendor/autoload.php';
 }
 
 PucFactory::buildUpdateChecker(
@@ -47,7 +47,7 @@ PucFactory::buildUpdateChecker(
  */
 function init() {
 
-	$block_json_files = glob( PIXALB_DATE_BLOCK_PATH . 'build/block.json' );
+	$block_json_files = glob( PIXELALBATROSS_DATE_BLOCK_PATH . 'build/block.json' );
 
 	foreach ( $block_json_files as $filename ) {
 
@@ -59,7 +59,7 @@ function init() {
 				wp_set_script_translations(
 					$handle,
 					'date-block',
-					PIXALB_DATE_BLOCK_PATH . 'languages'
+					PIXELALBATROSS_DATE_BLOCK_PATH . 'languages'
 				);
 			}
 		}
@@ -73,6 +73,6 @@ add_action( 'init', __NAMESPACE__ . '\init' );
  * @return void
  */
 function i18n() {
-	load_plugin_textdomain( 'date-block', false, plugin_basename( PIXALB_DATE_BLOCK_PATH ) . '/languages' );
+	load_plugin_textdomain( 'date-block', false, plugin_basename( PIXELALBATROSS_DATE_BLOCK_PATH ) . '/languages' );
 }
 add_action( 'init', __NAMESPACE__ . '\i18n' );
