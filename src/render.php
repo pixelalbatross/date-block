@@ -6,7 +6,7 @@
  * @var string    $content    Block default content.
  * @var \WP_Block $block      Block instance.
  *
- * @package pixelalbatross/date-block
+ * @package DateBlock
  */
 
 $date        = $attributes['date'] ?? false;
