@@ -13,8 +13,6 @@
  * Update URI:        https://pixelalbatross.pt/
  * GitHub Plugin URI: https://github.com/pixelalbatross/date-block
  * Text Domain:       date-block
- *
- * @package           DateBlock
  */
 
 namespace PixelAlbatross\WP\Blocks\Date;
