@@ -7,6 +7,8 @@
  * @var \WP_Block $block      Block instance.
  */
 
+namespace PixelAlbatross\WP\Blocks\Date;
+
 $date        = $attributes['date'] ?? false;
 $date_format = $attributes['dateFormat'] ?? get_option( 'date_format' );
 
