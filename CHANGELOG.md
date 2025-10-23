@@ -65,4 +65,5 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Support for empty dates. Useful to use in the copyright footer with the current year.
 
 ## [0.1.0] - 2023-04-17
+
 - Initial release.
