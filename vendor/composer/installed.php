@@ -3,7 +3,7 @@
         'name' => 'pixelalbatross/date-block',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'e8242c8dfe08a00b22cfd834385cbb735a604a6d',
+        'reference' => '10f0d4d175e22ef7eeeb5d83234454444223e522',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'pixelalbatross/date-block' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'e8242c8dfe08a00b22cfd834385cbb735a604a6d',
+            'reference' => '10f0d4d175e22ef7eeeb5d83234454444223e522',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
